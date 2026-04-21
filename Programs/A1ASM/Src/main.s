@@ -1,9 +1,9 @@
 ;******************** (C) COPYRIGHT HAW-Hamburg ********************************
 ;* File Name          : main.s
-;* Author             : Martin Becke
-;* Version            : V1.0
-;* Date               : 01.06.2021
-;* Description        : This is a simple main to setup three LEDs
+;* Author             : Lasse Boll
+;* Version            : V1.1
+;* Date               : 21.04.2026
+;* Description        : This is a simple main to setup two LEDs
 ;                     :
 ;                     :
 ;
@@ -32,9 +32,7 @@ main
     LDR     R7, =GPIO_D_CLR     ; get address of the GPIO data clear register
     ;MOV     R0, #0x01           ; load mask 0b0001
     ;MOV     R1, #0x02           ; load mask 0b0010
-    ;MOV     R2, #0x40           ; load mask 0b0100
-    ;MOV     R3, #0x80           ; load mask 0b1000
-	MOV		R4, #(0x01+0x02)	; 
+	MOV		R4, #(0x01+0x02)	; calc mask 1 + 2
 
     ; Set LED
 	STRB	R4, [R6]	; switch on LED D8+D9
